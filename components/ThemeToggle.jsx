@@ -44,6 +44,7 @@ export default function ThemeToggle() {
         position: "relative",
         transition: "background 0.3s ease",
       }}
+      
     >
       <div
         style={{
@@ -55,6 +56,7 @@ export default function ThemeToggle() {
           transform: theme === "light" ? "translateX(0)" : "translateX(-50px)",
           transition: "transform 0.35s ease-in-out",
         }}
+        
       >
         {/* Light icon (Sun) */}
         <div
