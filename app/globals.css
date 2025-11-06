@@ -1,42 +1,52 @@
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
-html,
-body {
-  max-width: 100vw;
-  overflow-x: hidden;
-}
-
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-* {
-  box-sizing: border-box;
-  padding: 0;
+*{
   margin: 0;
+  padding: 0;
 }
 
-a {
-  color: inherit;
+
+:root {
+  --bg-color: white;
+  --text-color: black;
+  --white: white;
+  --black: black;
+  /* lock colors */
+}
+
+[data-theme="dark"] {
+  --bg-color: var(--black);
+  --text-color: var(--white);
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: background-color 0.3s, color 0.3s;
+  font-size: 15px;
+}
+
+.article-section {
+  text-align: center;
+  padding: 4rem 1.5rem;
+  color: black;
+}
+
+.article-grid {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+  margin-top: 2rem;
+}
+
+.articlelink {
+  display: flex;
+  justify-self: center;
+  align-self: center;
+  margin-top: 2rem;
+  color: var(--white);
   text-decoration: none;
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
-}
+
+
+

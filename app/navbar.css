@@ -1,0 +1,119 @@
+header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+
+  padding: 2rem;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+
+  background: transparent; /* ✅ make it transparent */
+  backdrop-filter: blur(0px); /* optional - remove glass blur */
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2); /* softer line for dark mode */
+}
+
+header a {
+  text-decoration: none;
+}
+
+.navbar {
+  background-color: #ecf0f1;
+  padding: 0.3rem;
+  border-radius: 1rem;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  cursor: pointer;
+  user-select: none;
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  transition: 0.3s ease;
+}
+
+.logo:hover {
+  transform: translateY(-3px);
+}
+
+.logoimage img {
+  width: 42px;
+  height: 42px;
+  object-fit: contain;
+  filter: drop-shadow(0 0 4px rgba(0, 170, 255, 0.3));
+  transition: 0.4s ease;
+  border-radius: 50%;
+}
+
+.logoimage img:hover {
+  filter: drop-shadow(0 0 8px rgba(0, 170, 255, 0.6));
+}
+
+.logo strong {
+  font-size: 1.4rem;
+  letter-spacing: 1px;
+  font-weight: 700;
+  background: linear-gradient(90deg, #00c8ff, #007bff);
+  text-decoration: none;
+
+  background-clip: text;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+}
+
+.navbar ul {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar ul a{
+  text-decoration: none;
+}
+
+.navbar ul li {
+  text-align: center;
+  padding: 0.9rem;
+  color: #000000;
+  cursor: pointer;
+  font-weight: bolder;
+  text-decoration: none;
+}
+
+.navbar ul li:hover {
+  background-color: var(--black);
+  border-radius: 0.8rem;
+  color: var(--white);
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  background-color: #ecf0f1;
+  padding: 0.3rem;
+  border-radius: 1rem;
+  width: fit-content;
+}
+
+.contact {
+  background-color: #f4d03f;
+  color: var(--black);
+  padding: 0.7rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  margin-left: 3rem;
+}
+
+.contact:hover {
+  background-color: #cab45d;
+}
