@@ -37,17 +37,12 @@ const Navbar = () => {
             <Link href="/articles">
               <li>Articles</li>
             </Link>
+
+            <Link href="/contact">
+              <li>Contact Us</li>
+            </Link>
           </ul>
         </nav>
-
-        <div className="header-right">
-          <Link href="/contact" className="contact">
-            Contact Us
-          </Link>
-          <div className="toggle">
-            <ThemeToggle />
-          </div>
-        </div>
       </header>
 
       {/* ===== Mobile Navbar ===== */}
