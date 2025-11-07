@@ -28,9 +28,9 @@ const Navbar = () => {
             <Link href="/about">
               <li>About</li>
             </Link>
-            <Link href="/services">
+            {/* <Link href="/services">
               <li>Services</li>
-            </Link>
+            </Link> */}
             <Link href="/team">
               <li>Community</li>
             </Link>
