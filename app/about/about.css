@@ -320,9 +320,10 @@
 /* Testimonials */
 .testimonial {
   background: #fafafa;
-  border-left: 3px solid #999;
+  /* border-left: 3px solid #999; */
   padding: 20px;
   margin-top: 20px;
+  color: black;
 }
 
 /* CTA */
@@ -339,4 +340,44 @@
   cursor: pointer;
   background: #111;
   color: #fff;
+}
+
+/* testimonisl carousel */
+
+.testimonial-carousel {
+  width: 100%;
+  overflow: hidden;
+  margin: 50px 0;
+  position: relative;
+}
+
+.testimonial-track {
+  display: flex;
+  gap: 30px;
+  animation: scrollTestimonials 18s linear infinite;
+}
+
+.testimonial-card {
+
+  flex-shrink: 0;
+  width: 350px;
+  padding: 22px 24px;
+  background: #fafafa;
+  border-radius: 12px;
+  border: 1px solid #e5e5e5;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  color: #444;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.05);
+}
+
+/* Auto Scroll Animation */
+@keyframes scrollTestimonials {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); } /* Adjust depending on # of cards */
+}
+
+/* Optional: Pause on Hover */
+.testimonial-carousel:hover .testimonial-track {
+  animation-play-state: paused;
 }
