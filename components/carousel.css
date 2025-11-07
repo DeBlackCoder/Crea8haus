@@ -1,6 +1,4 @@
-/* ===============================
-   Carousel Base Styles
-   =============================== */
+
 .carousel {
   width: 100%;
   overflow: hidden;
@@ -32,12 +30,11 @@
   transform: scale(1.15);
 }
 
-/* Icons */
 .carousel-item svg {
   margin-bottom: 0.5rem;
 }
 
-/* Animation */
+
 @keyframes scroll {
   from {
     transform: translateX(0);
@@ -47,93 +44,4 @@
   }
 }
 
-/* Dark Mode Support */
-:root {
-  --text: #222;
-}
 
-.dark {
-  --text: #f5f5f5;
-}
-
-/* ===============================
-   Responsive Styles
-   =============================== */
-
-/* Mobile (max-width: 600px) */
-@media (max-width: 600px) {
-  .carousel {
-    padding: 1rem 0;
-  }
-
-  .carousel-track {
-    gap: 1.5rem;
-  }
-
-  .carousel-item {
-    min-width: 70px;
-    font-size: 0.8rem;
-  }
-
-  .carousel-item:hover {
-    transform: scale(1.1);
-  }
-
-  .carousel-item svg {
-    margin-bottom: 0.3rem;
-    width: 30px;
-    height: 30px;
-  }
-}
-
-/* Tablet (max-width: 900px) */
-@media (max-width: 900px) {
-  .carousel {
-    padding: 1.5rem 0;
-  }
-
-  .carousel-track {
-    gap: 2rem;
-  }
-
-  .carousel-item {
-    min-width: 80px;
-    font-size: 0.85rem;
-  }
-
-  .carousel-item:hover {
-    transform: scale(1.12);
-  }
-
-  .carousel-item svg {
-    margin-bottom: 0.4rem;
-    width: 35px;
-    height: 35px;
-  }
-}
-
-/* Desktop (min-width: 901px) */
-@media (min-width: 901px) {
-  .carousel {
-    padding: 2rem 0;
-  }
-
-  .carousel-track {
-    gap: 3rem;
-  }
-
-  .carousel-item {
-    min-width: 90px;
-    font-size: 0.9rem;
-  }
-
-  .carousel-item:hover {
-    transform: scale(1.15);
-  }
-
-  .carousel-item svg {
-    margin-bottom: 0.5rem;
-    width: 40px;
-    height: 40px;
-  }
-}

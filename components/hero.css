@@ -8,7 +8,7 @@
   position: relative;
 }
 
-/* Dark overlay */
+
 .hero-overlay {
   width: 100%;
   height: 100%;
@@ -40,7 +40,7 @@
 }
 
 
-/* Feature tag pills */
+
 .hero-tags {
   display: flex;
   flex-wrap: wrap;
@@ -58,7 +58,7 @@
 }
 
 
-/* CTA Button */
+
 .cta-btn {
   padding: 14px 28px;
   font-size: 1rem;
@@ -76,7 +76,7 @@
 }
 
 
-/* Simple entry animation */
+
 @keyframes fadeInUp {
   0% {
     opacity: 0;

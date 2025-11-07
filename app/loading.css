@@ -9,12 +9,12 @@
   color: var(--text-color, #ffffff);
 }
 
-/* Circular rotating animation holder */
+
 .loader-circle {
   width: 110px;
   height: 110px;
   border: 4px solid rgba(255, 255, 255, 0.25);
-  border-top-color: #4cc9f0; /* highlight color */
+  border-top-color: #4cc9f0; 
   border-radius: 50%;
   display: flex;
   justify-content: center;
@@ -23,13 +23,13 @@
   margin-bottom: 1rem;
 }
 
-/* Logo inside spinner */
+
 .loader-circle img {
   width: 55%;
   height: auto;
 }
 
-/* Text Fade / Glow */
+
 .loading-text {
   font-size: 1.7rem;
   font-weight: 700;
@@ -38,14 +38,13 @@
   animation: fade 1.4s ease-in-out infinite alternate;
 }
 
-/* Spin Animation */
+
 @keyframes spin {
   to {
     transform: rotate(360deg);
   }
 }
 
-/* Soft glow breathing */
 @keyframes fade {
   0% {
     opacity: 0.4;
