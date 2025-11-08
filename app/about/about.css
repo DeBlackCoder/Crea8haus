@@ -374,49 +374,8 @@
   animation-play-state: paused;
 }
 
-@media (max-width:600px) {
- .about-section {
-  margin-top:4rem;
-  height: 50vh;
- }
-}
-/* ---------------------------------------------------- */
-/* TABLET (≥ 600px) */
-/* ---------------------------------------------------- */
-/* @media (min-width: 600px) {
-
-  .about-section {
-    margin: 10rem auto 4rem auto;
-    padding: 2rem 3rem;
-    font-size: 1.1rem;
-    line-height: 2.1rem;
-  }
-
-  .services-grid {
-    gap: 20px;
-  }
-
-  .service-card {
-    width: 250px;
-    height: 180px;
-  }
-
-  .process-steps {
-    flex-direction: row;
-    gap: 15px;
-  }
-
-  .step {
-    width: 28%;
-    padding: 2rem;
-  }
-} */
 
 
-
-/* ---------------------------------------------------- */
-/* DESKTOP (≥ 768px) */
-/* ---------------------------------------------------- */
 @media (min-width: 768px) {
 
   .about-section {
