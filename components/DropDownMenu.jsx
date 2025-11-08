@@ -51,9 +51,7 @@ export function DropdownMenuContainer() {
                 Contact Us
               </Link>
             </li>
-            <li className="toggle"  onClick={handleLinkClick}>
-              <ThemeToggle />
-            </li>
+           
           </ul>
         </div>
       )}

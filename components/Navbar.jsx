@@ -49,8 +49,8 @@ const Navbar = () => {
       <div className="mobile-header">
         {/* Logo */}
         <Link href="/">
-          <div className="logo">
-            <div className="logoimage">
+          <div className="logo-mobile">
+            <div className="logoimage-mobile">
               <img src="/svg/crea8logo.png" alt="Logo" />
             </div>
           </div>
