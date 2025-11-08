@@ -373,3 +373,163 @@
 .testimonial-carousel:hover .testimonial-track {
   animation-play-state: paused;
 }
+
+@media (max-width:600px) {
+ .about-section {
+  margin-top:4rem;
+  height: 50vh;
+  display: flex;
+  flex-direction: column;
+  justify-self: center;
+  align-self: center;
+ }
+}
+/* ---------------------------------------------------- */
+/* TABLET (≥ 600px) */
+/* ---------------------------------------------------- */
+@media (min-width: 600px) {
+
+  .about-section {
+    margin: 10rem auto 4rem auto;
+    padding: 2rem 3rem;
+    font-size: 1.1rem;
+    line-height: 2.1rem;
+  }
+
+  .services-grid {
+    gap: 20px;
+  }
+
+  .service-card {
+    width: 250px;
+    height: 180px;
+  }
+
+  .process-steps {
+    flex-direction: row;
+    gap: 15px;
+  }
+
+  .step {
+    width: 28%;
+    padding: 2rem;
+  }
+}
+
+
+
+/* ---------------------------------------------------- */
+/* DESKTOP (≥ 768px) */
+/* ---------------------------------------------------- */
+@media (min-width: 768px) {
+
+  .about-section {
+    max-width: 900px;
+    margin: 15rem auto 5rem auto;
+    text-align: left;
+  }
+
+  .services-grid {
+    grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+    justify-items: center;
+  }
+
+  .process-steps {
+    flex-direction: row;
+    gap: 20px;
+  }
+
+  .step {
+    width: 23%;
+  }
+
+  .mv-grid {
+    flex-direction: row;
+  }
+
+  .mv-box {
+    text-align: left;
+  }
+}
+
+/* ---------------------------------------------------- */
+/* LARGE DESKTOP (≥ 1024px) */
+/* ---------------------------------------------------- */
+@media (min-width: 1024px) {
+
+  .about-section {
+    max-width: 1000px;
+    margin: 20rem auto 5rem auto;
+    font-size: 1.2rem;
+    line-height: 2.2rem;
+  }
+
+  .services-grid {
+    width: 80%;
+  }
+
+  .step {
+    width: 22%;
+    padding: 3rem;
+  }
+
+  .mv-grid {
+    gap: 30px;
+  }
+}
+
+/* ---------------------------------------------------- */
+/* EXTRA-LARGE SCREENS (≥ 1280px) */
+/* ---------------------------------------------------- */
+@media (min-width: 1280px) {
+
+  .about-section {
+    max-width: 1100px;
+    margin: 25rem auto 6rem auto;
+    font-size: 1.25rem;
+    line-height: 2.4rem;
+  }
+
+  .services-grid {
+    width: 70%;
+    gap: 30px;
+  }
+
+  .step {
+    width: 20%;
+    padding: 3rem;
+  }
+
+  .testimonial-card {
+    width: 400px;
+    padding: 25px 28px;
+  }
+}
+
+/* ---------------------------------------------------- */
+/* ULTRA-WIDE SCREENS (≥ 1600px) */
+/* ---------------------------------------------------- */
+@media (min-width: 1600px) {
+
+  .about-section {
+    max-width: 1200px;
+    margin: 30rem auto 6rem auto;
+    font-size: 1.3rem;
+    line-height: 2.5rem;
+  }
+
+  .services-grid {
+    width: 65%;
+    gap: 35px;
+  }
+
+  .step {
+    width: 18%;
+    padding: 3.5rem;
+  }
+
+  .testimonial-card {
+    width: 450px;
+    padding: 30px 35px;
+  }
+}
