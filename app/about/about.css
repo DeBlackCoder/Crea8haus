@@ -67,7 +67,7 @@
 
 .services-wrapper .services-grid {
   border-bottom: 2px solid rgb(92, 91, 91);
-  /* border-bottom-width: 10%; */
+  border-bottom-width: 50%;
   padding-bottom: 6rem;
 }
 
@@ -397,7 +397,13 @@
 
 @media (max-width:768px) {
 
-  
+  .services-grid {
+    width: 50%;
+    margin-left: -5.5rem;
+  }
+  .my-grid {
+    margin: 0;
+  }
 
   .testimonial-card {
     width: 250px;
@@ -426,6 +432,8 @@
 
 
 @media (min-width: 768px) {
+
+  
 
   .about-section {
     max-width: 900px;
