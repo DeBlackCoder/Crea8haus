@@ -364,15 +364,14 @@
 }
 
 
-@keyframes scrollTestimonials {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); } /* adjust if needed */
-}
-
-/* Keyframes for mobile */
 @keyframes scrollTestimonialsMobile {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-65%); } /* wider scroll distance for smaller cards */
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(calc(-1 * (250px + 15px) * 8)); 
+    /* 250px = card width, 15px = gap, 8 = number of cards */
+  }
 }
 
 
@@ -380,12 +379,25 @@
   animation-play-state: paused;
 }
 
+@media (max-width: 768px) {
+  .testimonial-track {
+    display: flex;
+    gap: 15px;
+    animation: scrollTestimonialsMobile 20s linear infinite;
+    width: max-content; /* ensures track width fits all cards */
+  }
+
+  .testimonial-card {
+    flex-shrink: 0;
+    width: 250px;
+    padding: 16px 18px;
+    font-size: 0.95rem;
+  }
+}
+
 @media (max-width:768px) {
 
-  .testimonial-track {
-    gap: 15px;
-    animation: scrollTestimonialsMobile 8s linear infinite; /* faster scroll */
-  }
+  
 
   .testimonial-card {
     width: 250px;
