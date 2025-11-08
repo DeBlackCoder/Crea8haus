@@ -366,7 +366,13 @@
 
 @keyframes scrollTestimonials {
   0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); } 
+  100% { transform: translateX(-50%); } /* adjust if needed */
+}
+
+/* Keyframes for mobile */
+@keyframes scrollTestimonialsMobile {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-65%); } /* wider scroll distance for smaller cards */
 }
 
 
@@ -375,6 +381,17 @@
 }
 
 @media (max-width:768px) {
+
+  .testimonial-track {
+    gap: 15px;
+    animation: scrollTestimonialsMobile 8s linear infinite; /* faster scroll */
+  }
+
+  .testimonial-card {
+    width: 250px;
+    padding: 16px 18px;
+    font-size: 0.95rem;
+  }
   .about-section {
     margin: 0;
     margin-top: 3rem;
