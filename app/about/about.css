@@ -378,10 +378,6 @@
  .about-section {
   margin-top:4rem;
   height: 50vh;
-  display: flex;
-  flex-direction: column;
-  justify-self: center;
-  align-self: center;
  }
 }
 /* ---------------------------------------------------- */
