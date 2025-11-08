@@ -150,6 +150,7 @@ header a {
 
 
 
+
 /* ---------------------------------------------------- */
 /* DESKTOP MEDIA QUERY (Styles for 768px and wider) */
 /* ---------------------------------------------------- */
@@ -159,8 +160,6 @@ header a {
   .mobile-header {
     display: none;
   }
-  
-
 
   .desktop-navbar {
     display: flex;
@@ -172,137 +171,5 @@ header a {
   .mobile-header .logo strong,
   .desktop-navbar .logo strong {
     font-size: 15px;
-  }
-}
-/* ---------------------------------------------------- */
-/* BASE STYLES (Mobile-First) */
-/* ---------------------------------------------------- */
-/* Your existing base styles are already here */
-
-/* ---------------------------------------------------- */
-/* TABLET (≥ 600px) */
-/* ---------------------------------------------------- */
-@media (min-width: 600px) {
-  .navbar {
-    width: 50%;
-  }
-
-  .navbar ul li {
-    padding: 1rem;
-  }
-
-  .logoimage img {
-    width: 150px;
-    height: 50px;
-  }
-}
-
-/* ---------------------------------------------------- */
-/* DESKTOP (≥ 768px) */
-/* ---------------------------------------------------- */
-/* @media (min-width: 768px) {
-  .mobile-header {
-    display: none;
-  }
-
-  .desktop-navbar {
-    display: flex;
-    justify-content: space-around;
-    padding: 2rem;
-  }
-
-  .mobile-header .logo strong,
-  .desktop-navbar .logo strong {
-    font-size: 15px;
-  }
-
-  .navbar {
-    width: 30%;
-  }
-
-  .logoimage img {
-    width: 175px;
-    height: 55px;
-  }
-} */
-
-/* ---------------------------------------------------- */
-/* LARGE DESKTOP (≥ 1024px) */
-/* ---------------------------------------------------- */
-/* @media (min-width: 1024px) {
-  header {
-    padding: 2.5rem 4rem;
-  }
-
-  .navbar {
-    width: 25%;
-  }
-
-  .navbar ul li {
-    padding: 1rem 1.2rem;
-    font-size: 1rem;
-  }
-
-  .logoimage img {
-    width: 200px;
-    height: 65px;
-  }
-
-  .logo strong {
-    font-size: 1.6rem;
-  }
-} */
-
-/* ---------------------------------------------------- */
-/* EXTRA-LARGE SCREENS (≥ 1280px) */
-/* ---------------------------------------------------- */
-/* @media (min-width: 1280px) {
-  header {
-    padding: 3rem 5rem;
-  }
-
-  .navbar {
-    width: 20%;
-  }
-
-  .navbar ul li {
-    padding: 1.2rem 1.5rem;
-    font-size: 1.1rem;
-  }
-
-  .logoimage img {
-    width: 220px;
-    height: 70px;
-  }
-
-  .logo strong {
-    font-size: 1.8rem;
-  }
-} */
-
-/* ---------------------------------------------------- */
-/* ULTRA WIDE SCREENS (≥ 1600px) */
-/* ---------------------------------------------------- */
-@media (min-width: 1600px) {
-  header {
-    padding: 3rem 6rem;
-  }
-
-  .navbar {
-    width: 18%;
-  }
-
-  .navbar ul li {
-    padding: 1.5rem 2rem;
-    font-size: 1.2rem;
-  }
-
-  .logoimage img {
-    width: 250px;
-    height: 80px;
-  }
-
-  .logo strong {
-    font-size: 2rem;
   }
 }
