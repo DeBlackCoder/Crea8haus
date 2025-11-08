@@ -4,6 +4,7 @@ import ThemeToggle from "./ThemeToggle";
 import { useState } from "react";
 import { DropdownMenuContainer } from "./DropDownMenu";
 
+
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
 
@@ -14,9 +15,8 @@ const Navbar = () => {
         <Link href="/">
           <div className="logo">
             <div className="logoimage">
-              <img src="/images/logo.png" alt="Crea8haus logo" />
+              <img src="/svg/crea8logo.png" alt="Logo" />
             </div>
-            <strong>Crea8haus</strong>
           </div>
         </Link>
 
@@ -49,11 +49,10 @@ const Navbar = () => {
       <div className="mobile-header">
         {/* Logo */}
         <Link href="/">
-          <div className="logo">
-            <div className="logoimage">
-              <img src="/images/logo.png" alt="Crea8haus logo" />
+          <div className="logo-mobile">
+            <div className="logoimage-mobile">
+              <img src="/svg/crea8logo.png" alt="Logo" />
             </div>
-            <strong>Crea8haus</strong>
           </div>
         </Link>
 

@@ -67,7 +67,7 @@
 
 .services-wrapper .services-grid {
   border-bottom: 2px solid rgb(92, 91, 91);
-  /* border-bottom-width: 10%; */
+  border-bottom-width: 50%;
   padding-bottom: 6rem;
 }
 
@@ -364,12 +364,186 @@
 }
 
 
-@keyframes scrollTestimonials {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); } 
+@keyframes scrollTestimonialsMobile {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(calc(-1 * (250px + 15px) * 8)); 
+    /* 250px = card width, 15px = gap, 8 = number of cards */
+  }
 }
 
 
 .testimonial-carousel:hover .testimonial-track {
   animation-play-state: paused;
 }
+
+@media (max-width: 768px) {
+  .testimonial-track {
+    display: flex;
+    gap: 15px;
+    animation: scrollTestimonialsMobile 20s linear infinite;
+    width: max-content; /* ensures track width fits all cards */
+  }
+
+  .testimonial-card {
+    flex-shrink: 0;
+    width: 250px;
+    padding: 16px 18px;
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width:768px) {
+
+  .services-grid {
+    width: 50%;
+    margin-left: -5.5rem;
+  }
+  .my-grid {
+    margin: 0;
+  }
+
+  .testimonial-card {
+    width: 250px;
+    padding: 16px 18px;
+    font-size: 0.95rem;
+  }
+  .about-section {
+    margin: 0;
+    margin-top: 3rem;
+    /* height: 50vh; */
+  }
+  .process-steps {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;                         
+  text-align: center;
+  margin-top: 20px;
+}
+
+.step {
+  width: 100%;       
+  padding: 1.5rem; 
+  box-sizing: border-box;
+}
+}
+
+
+@media (min-width: 768px) {
+
+  
+
+  .about-section {
+    max-width: 900px;
+    margin: 15rem auto 5rem auto;
+    text-align: left;
+  }
+
+  .services-grid {
+    grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+    justify-items: center;
+  }
+
+  .process-steps {
+    flex-direction: row;
+    gap: 20px;
+  }
+
+  .step {
+    width: 23%;
+  }
+
+  .mv-grid {
+    flex-direction: row;
+  }
+
+  .mv-box {
+    text-align: left;
+  }
+}
+
+/* ---------------------------------------------------- */
+/* LARGE DESKTOP (≥ 1024px) */
+/* ---------------------------------------------------- */
+@media (min-width: 1024px) {
+
+  .about-section {
+    max-width: 1000px;
+    margin: 20rem auto 5rem auto;
+    font-size: 1.2rem;
+    line-height: 2.2rem;
+  }
+
+  .services-grid {
+    width: 80%;
+  }
+
+  .step {
+    width: 22%;
+    padding: 3rem;
+  }
+
+  .mv-grid {
+    gap: 30px;
+  }
+}
+
+/* ---------------------------------------------------- */
+/* EXTRA-LARGE SCREENS (≥ 1280px) */
+/* ---------------------------------------------------- */
+@media (min-width: 1280px) {
+
+  .about-section {
+    max-width: 1100px;
+    margin: 25rem auto 6rem auto;
+    font-size: 1.25rem;
+    line-height: 2.4rem;
+  }
+
+  .services-grid {
+    width: 70%;
+    gap: 30px;
+  }
+
+  .step {
+    width: 20%;
+    padding: 3rem;
+  }
+
+  .testimonial-card {
+    width: 400px;
+    padding: 25px 28px;
+  }
+}
+
+/* ---------------------------------------------------- */
+/* ULTRA-WIDE SCREENS (≥ 1600px) */
+/* ---------------------------------------------------- */
+@media (min-width: 1600px) {
+
+  .about-section {
+    max-width: 1200px;
+    margin: 30rem auto 6rem auto;
+    font-size: 1.3rem;
+    line-height: 2.5rem;
+  }
+
+  .services-grid {
+    width: 65%;
+    gap: 35px;
+  }
+
+  .step {
+    width: 18%;
+    padding: 3.5rem;
+  }
+
+  .testimonial-card {
+    width: 450px;
+    padding: 30px 35px;
+  }
+}
+
+
