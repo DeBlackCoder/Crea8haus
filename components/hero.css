@@ -87,3 +87,13 @@
     transform: translateY(0);
   }
 }
+
+@media (min-width: 768px) {
+  .hero .hero-overlay .hero-content h1 {
+    font-size: 1.5rem;
+  }
+
+  .hero > .hero-overlay > .hero-content p {
+    font-size: 0.25rem;
+  }
+}

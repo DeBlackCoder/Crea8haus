@@ -117,6 +117,52 @@ header a {
   margin-left: 3rem;
 }
 
-.mobile-header {
+/* ---------------------------------------------------- */
+/* MOBILE-FIRST SETUP (Default styles for small screens) */
+/* ---------------------------------------------------- */
+
+/* Hide the desktop navigation by default */
+
+.desktop-navbar {
   display: none;
+}
+
+/*ensure mobile header is visible*/
+.mobile-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 1.5rem;
+  position: fixed;
+  top: 0;
+  z-index: 999;
+  width: 90%;
+  background: transparent;
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+  left: 0;
+}
+
+/* ---------------------------------------------------- */
+/* DESKTOP MEDIA QUERY (Styles for 768px and wider) */
+/* ---------------------------------------------------- */
+
+/* At 768px and above */
+@media (min-width: 768px) {
+  .mobile-header {
+    display: none;
+  }
+
+  .desktop-navbar {
+    display: flex;
+    justify-content: space-around;
+    /* align-items: center; */
+    padding: 2rem;
+  }
+
+  .mobile-header .logo strong,
+  .desktop-navbar .logo strong {
+    font-size: 15px;
+  }
 }

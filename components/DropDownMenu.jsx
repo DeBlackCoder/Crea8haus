@@ -30,7 +30,7 @@ export function DropdownMenuContainer() {
       {/* Dropdown Content */}
       {isOpen && (
         <div className="dropdown-content">
-           <ul>
+          <ul>
             <li onClick={handleLinkClick}>
               <Link href="/">Home</Link>
             </li>
