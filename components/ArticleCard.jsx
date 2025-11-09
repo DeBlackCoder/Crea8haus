@@ -1,37 +1,73 @@
-// import React from "react";
-// import "./ArticleSection.css";
-// import Image from "next/image";
+'use client';
+import React, { useState } from 'react';
+import { ExternalLink, ArrowRight } from 'lucide-react';
+import './ArticleCard.css';
 
-// export default function ArticleCard({ article, isExternal, onClick }) {
-//   return (
-//     <div className="article-card">
-//       <img src={article.image} alt={article.title} className="article-image" />
-//       <div className="article-content">
-//         {isExternal && <div className="platform-badge">{article.platform}</div>}
-//         <h3 className="article-title">{article.title}</h3>
-//         <p className="article-description">{article.summary}</p>
-//         <div className="article-meta">
-//           <span>{article.author}</span>
-//           <span>•</span>
-//           <span>{article.date}</span>
-//           <span>•</span>
-//           <span>{article.readTime}</span>
-//         </div>
-//         {isExternal ? (
-//           <a
-//             href={article.link}
-//             target="_blank"
-//             rel="noopener noreferrer"
-//             className="btn-read-more"
-//           >
-//             Read More
-//           </a>
-//         ) : (
-//           <button className="btn-read-more" onClick={onClick}>
-//             Read More
-//           </button>
-//         )}
-//       </div>
-//     </div>
-//   );
-// }
+const ArticleCard = ({ article, isWebArticle, onReadMore }) => {
+  const [isHovered, setIsHovered] = useState(false);
+
+  return (
+    <div 
+      className="article-card"
+      style={{
+        transform: isHovered ? 'translateY(-5px)' : 'translateY(0)',
+        borderColor: isHovered ? '#444' : '#222'
+      }}
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
+    >
+      <div className="image-container">
+        <img 
+          src={article.image} 
+          alt={article.title}
+          className="article-image"
+          style={{ transform: isHovered ? 'scale(1.05)' : 'scale(1)' }}
+        />
+      </div>
+
+      <div className="article-content">
+        {isWebArticle && (
+          <div className="platform-badge">
+            <ExternalLink size={16} />
+            <span>{article.platform}</span>
+          </div>
+        )}
+
+        <h3 className="article-title">{article.title}</h3>
+        <p className="article-description">{article.description}</p>
+        
+        <div className="author-section">
+          <img src={article.author.avatar} alt={article.author.name} className="avatar" />
+          <div className="author-info">
+            <div className="author-name">{article.author.name}</div>
+            <div className="meta">
+              <span>{article.date}</span>
+              <span>•</span>
+              <span>{article.readTime}</span>
+            </div>
+          </div>
+        </div>
+
+        {isWebArticle ? (
+          <a 
+            href={article.externalUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className={`read-more-btn ${isHovered ? 'hovered' : ''}`}
+          >
+            Read More <ArrowRight size={16} />
+          </a>
+        ) : (
+          <button 
+            onClick={() => onReadMore(article)}
+            className={`read-more-btn ${isHovered ? 'hovered' : ''}`}
+          >
+            Read More <ArrowRight size={16} />
+          </button>
+        )}
+      </div>
+    </div>
+  );
+};
+
+export default ArticleCard;

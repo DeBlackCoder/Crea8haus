@@ -530,7 +530,7 @@ const ArticleFullView = ({ article, onClose }) => {
       marginTop: '60px',
       paddingTop: '30px',
       borderTop: '1px solid #222'
-    }
+    },
   };
 
   const [isBackHovered, setIsBackHovered] = useState(false);
