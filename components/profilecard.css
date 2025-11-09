@@ -7,6 +7,12 @@
   backdrop-filter: blur(8px);
   transition: 0.35s;
   box-shadow: 2px 8px 20px rgba(0, 0, 0, 0.12);
+  color: black;
+  font-size: 40px;
+}
+
+.profile-card a {
+  font-size: 15px;
 }
 
 

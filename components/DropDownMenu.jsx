@@ -38,13 +38,10 @@ export function DropdownMenuContainer() {
               <Link href="/about">About</Link>
             </li>
             <li onClick={handleLinkClick}>
-              <Link href="/services">Services</Link>
+              <Link href="/community">Community</Link>
             </li>
             <li onClick={handleLinkClick}>
-              <Link href="/team">Community</Link>
-            </li>
-            <li onClick={handleLinkClick}>
-              <Link href="/articles">Articles</Link>
+              <Link href="/writearticle">Articles</Link>
             </li>
             <li onClick={handleLinkClick}>
               <Link href="/contact" className="contact">

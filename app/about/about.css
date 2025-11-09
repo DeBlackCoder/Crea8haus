@@ -1,4 +1,3 @@
-
 .about-body {
     display: flex;
     flex-direction: column;
@@ -28,7 +27,6 @@
 
 .about-section h2 {
   padding: 2rem;
-  
 }
 
 .aboutlogoname strong {
@@ -45,8 +43,7 @@
 
 
 @keyframes blink {
-  0%,
-  100% {
+  0%, 100% {
     opacity: 1;
   }
   50% {
@@ -71,13 +68,12 @@
   padding-bottom: 6rem;
 }
 
-.services-wrapper h2{
+.services-wrapper h2 {
   color: white;
   text-align: center;
 }
 
-.corestrong{
-   /* font-size: 1.4rem; */
+.corestrong {
   letter-spacing: 1px;
   font-weight: 700;
   background: linear-gradient(90deg, #969393, #05386e);
@@ -88,8 +84,7 @@
   -webkit-text-fill-color: transparent;
 }
 
-.servicestrong{
-   /* font-size: 1.4rem; */
+.servicestrong {
   letter-spacing: 1px;
   font-weight: 700;
   background: linear-gradient(90deg, #05386e, #969393);
@@ -116,7 +111,6 @@
   cursor: pointer;
 }
 
-
 .service-card:hover {
   transform: translateY(-8px);
   box-shadow: 0 16px 35px rgba(0, 0, 0, 0.12);
@@ -127,7 +121,6 @@
   font-weight: 600;
   transition: transform 0.5s ease;
 }
-
 
 .service-card-text {
   position: absolute;
@@ -146,7 +139,6 @@
   overflow: hidden;
 }
 
-
 .service-card:hover .service-card-text {
   transform: translateY(0);
 }
@@ -163,10 +155,8 @@
   gap: 24px;
   justify-items: center;
   justify-self: center;
-  align-items: center  ;
+  align-items: center;
 }
-
-
 
 .about-container {
   width: 90%;
@@ -180,7 +170,6 @@
   margin: 60px 0;
 }
 
-
 .section-header h2 {
   font-size: 2rem;
   text-align: center;
@@ -193,7 +182,6 @@
   max-width: 500px;
   margin: auto;
 }
-
 
 .mv-grid {
   display: flex;
@@ -218,18 +206,17 @@
 .values-list li {
   margin: 12px 0;
   font-size: 1.05rem;
- color: white;
- list-style: none;
- text-align: center;
- font-size: 16px;
+  color: white;
+  list-style: none;
+  text-align: center;
+  font-size: 16px;
 }
 
 .values-list li strong {
-   margin: 12px 0;
+  margin: 12px 0;
   font-size: 1.05rem;
   color: white;
 }
-
 
 .process-steps {
   display: flex;
@@ -248,21 +235,17 @@
   color: black;
   width: 23%;
   padding: 3rem;
-  /* border: 1px solid #ddd; */
   border-radius: 10px;
   background: #fff;
   cursor: pointer;
   overflow: hidden;
   transition: box-shadow 0.3s ease, transform 0.3s ease;
-  
 }
 
-/* Hover bounce */
 .step:hover {
   transform: translateY(-6px);
   box-shadow: 0 12px 25px rgba(0,0,0,0.1);
 }
-
 
 .step-label {
   position: relative;
@@ -271,7 +254,6 @@
   font-size: 1rem;
 }
 
-
 .step-detail {
   position: absolute;
   top: 0;
@@ -279,20 +261,17 @@
   width: 100%;
   height: 100%;
   background: #7c7b7b;
-  border-left: 4rem ;
   padding: 1rem;
   display: flex;
   align-items: center;
   font-size: 0.9rem;
   transition: transform 0.5s ease;
   border: none;
-
 }
 
 .step:hover .step-detail {
   transform: translateX(100%);
 }
-
 
 .section-block {
   display: flex;
@@ -303,14 +282,11 @@
   padding-bottom: 8rem;
 }
 
-
-
 .stats-grid {
   display: flex;
   justify-content: space-between;
   text-align: center;  
 }
-
 
 .testimonial {
   background: #fafafa;
@@ -318,7 +294,6 @@
   margin-top: 20px;
   color: black;
 }
-
 
 .cta-section {
   text-align: center;
@@ -335,7 +310,7 @@
   color: #fff;
 }
 
-
+/* ✅ Fixed Testimonial Animation Section */
 .testimonial-carousel {
   width: 100%;
   overflow: hidden;
@@ -346,11 +321,10 @@
 .testimonial-track {
   display: flex;
   gap: 30px;
-  animation: scrollTestimonials 18s linear infinite;
+  animation: scrollTestimonials 25s linear infinite;
 }
 
 .testimonial-card {
-
   flex-shrink: 0;
   width: 350px;
   padding: 22px 24px;
@@ -361,20 +335,34 @@
   line-height: 1.5rem;
   color: #444;
   box-shadow: 0 4px 16px rgba(0,0,0,0.05);
+  transition: transform 0.3s ease;
 }
 
+.testimonial-card:hover {
+  transform: scale(1.05);
+}
 
+/* ✅ Desktop animation fix */
+@keyframes scrollTestimonials {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(calc(-1 * (350px + 30px) * 8)); 
+  }
+}
+
+/* ✅ Mobile animation */
 @keyframes scrollTestimonialsMobile {
   0% {
     transform: translateX(0);
   }
   100% {
     transform: translateX(calc(-1 * (250px + 15px) * 8)); 
-    /* 250px = card width, 15px = gap, 8 = number of cards */
   }
 }
 
-
+/* Pause animation on hover */
 .testimonial-carousel:hover .testimonial-track {
   animation-play-state: paused;
 }
@@ -384,7 +372,7 @@
     display: flex;
     gap: 15px;
     animation: scrollTestimonialsMobile 20s linear infinite;
-    width: max-content; /* ensures track width fits all cards */
+    width: max-content;
   }
 
   .testimonial-card {
@@ -396,7 +384,6 @@
 }
 
 @media (max-width:768px) {
-
   .services-grid {
     width: 50%;
     margin-left: -5.5rem;
@@ -413,28 +400,23 @@
   .about-section {
     margin: 0;
     margin-top: 3rem;
-    /* height: 50vh; */
   }
   .process-steps {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 15px;                         
-  text-align: center;
-  margin-top: 20px;
-}
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;                         
+    text-align: center;
+    margin-top: 20px;
+  }
 
-.step {
-  width: 100%;       
-  padding: 1.5rem; 
-  box-sizing: border-box;
+  .step {
+    width: 100%;       
+    padding: 1.5rem; 
+    box-sizing: border-box;
+  }
 }
-}
-
 
 @media (min-width: 768px) {
-
-  
-
   .about-section {
     max-width: 900px;
     margin: 15rem auto 5rem auto;
@@ -464,11 +446,7 @@
   }
 }
 
-/* ---------------------------------------------------- */
-/* LARGE DESKTOP (≥ 1024px) */
-/* ---------------------------------------------------- */
 @media (min-width: 1024px) {
-
   .about-section {
     max-width: 1000px;
     margin: 20rem auto 5rem auto;
@@ -490,11 +468,7 @@
   }
 }
 
-/* ---------------------------------------------------- */
-/* EXTRA-LARGE SCREENS (≥ 1280px) */
-/* ---------------------------------------------------- */
 @media (min-width: 1280px) {
-
   .about-section {
     max-width: 1100px;
     margin: 25rem auto 6rem auto;
@@ -518,11 +492,7 @@
   }
 }
 
-/* ---------------------------------------------------- */
-/* ULTRA-WIDE SCREENS (≥ 1600px) */
-/* ---------------------------------------------------- */
 @media (min-width: 1600px) {
-
   .about-section {
     max-width: 1200px;
     margin: 30rem auto 6rem auto;
@@ -545,5 +515,3 @@
     padding: 30px 35px;
   }
 }
-
-

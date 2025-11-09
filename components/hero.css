@@ -24,19 +24,21 @@
   padding: 2rem;
   color: white;
   animation: fadeInUp 1.2s ease;
+
 }
 
-.hero-content h1 {
-  font-size: 3rem;
+.hero-content h1 .typing-text {
+  font-size: 50px;
   font-weight: 800;
   line-height: 1.2;
   margin-bottom: 1rem;
 }
 
-.hero-content p {
-  font-size: 1.1rem;
+.hero-overlay .hero-content p {
+  font-size: 20px;
   opacity: 0.9;
   margin-bottom: 2rem;
+  margin-top: 2rem;
 }
 
 
@@ -93,7 +95,4 @@
     font-size: 1.5rem;
   }
 
-  .hero > .hero-overlay > .hero-content p {
-    font-size: 0.25rem;
-  }
 }
