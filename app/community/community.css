@@ -1,3 +1,4 @@
+/* COMMUNITY SECTION */
 .community-section {
   width: 100%;
   padding: 6rem 2rem;
@@ -15,6 +16,7 @@
 .community-highlight {
   background: linear-gradient(90deg, #00c8ff, #007bff);
   -webkit-background-clip: text;
+  background-clip: text;
   color: transparent;
 }
 
@@ -23,6 +25,7 @@
   margin: 1rem auto 2rem;
   opacity: 0.8;
   font-size: 1rem;
+  line-height: 1.6;
 }
 
 .join-btn {
@@ -33,8 +36,9 @@
   color: white;
   text-decoration: none;
   font-weight: 500;
-  transition: 0.35s ease;
+  transition: all 0.35s ease;
 }
+
 .join-btn:hover {
   background: #00c8ff;
   transform: translateY(-3px);
@@ -57,7 +61,7 @@
   border: 1px solid rgba(255, 255, 255, 0.15);
   padding: 2rem;
   border-radius: 14px;
-  transition: 0.3s ease;
+  transition: all 0.3s ease;
   backdrop-filter: blur(6px);
 }
 
@@ -78,13 +82,95 @@
   border-color: #00c8ff;
 }
 
-@media (max-width: 768px) {
+/* RESPONSIVE DESIGN - MOBILE FIRST APPROACH */
+
+/* Small Mobile (up to 480px) */
+@media screen and (max-width: 480px) {
   .community-section {
-    width: 90%;
-    margin: 4rem auto;
+    padding: 3rem 0rem;
+    margin-top: 4rem;
   }
 
   .community-hero h2 {
-    font-size: 1.6rem;
+    font-size: 1.4rem;
+  }
+
+  .community-hero p {
+    font-size: 0.9rem;
+    max-width: 95%;
+  }
+
+  .join-btn {
+    padding: 10px 24px;
+    font-size: 0.9rem;
+  }
+
+  .community-cards {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    width: 90%;
+    margin-top: 2.5rem;
+  }
+
+  .community-card {
+    padding: 1.5rem;
+  }
+
+  .community-card h3 {
+    font-size: 1.1rem;
+  }
+
+  .community-card p {
+    font-size: 0.875rem;
+  }
+}
+
+/* Tablets (481px to 768px) */
+@media screen and (min-width: 481px) and (max-width: 768px) {
+  .community-section {
+    padding: 4.5rem 1.5rem;
+    margin-top: 6rem;
+  }
+
+  .community-hero h2 {
+    font-size: 1.8rem;
+  }
+
+  .community-hero p {
+    font-size: 0.95rem;
+  }
+
+  .community-cards {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.3rem;
+    width: 92%;
+  }
+
+  .community-card {
+    padding: 1.75rem;
+  }
+}
+
+/* Small Laptops (769px to 1024px) */
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+  .community-section {
+    padding: 5rem 2rem;
+    margin-top: 8rem;
+  }
+
+  .community-hero h2 {
+    font-size: 2rem;
+  }
+
+  .community-cards {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+  }
+}
+
+/* Large Screens (1025px and above) */
+@media screen and (min-width: 1025px) {
+  .community-cards {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   }
 }

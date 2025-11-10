@@ -14,7 +14,7 @@ const TeamMembers = () => {
           </div>
           <div className="team-info">
             <h3 className="team-name">GreatLife Lazarus</h3>
-            <p className="team-role">Creative Director</p>
+            <p className="team-role">CEO</p>
           </div>
         </div>
 
@@ -24,7 +24,7 @@ const TeamMembers = () => {
           </div>
           <div className="team-info">
             <h3 className="team-name">Hillary-Prosper Wahua</h3>
-            <p className="team-role">Team Admin / Lead Frontend Designer</p>
+            <p className="team-role"> CEO / Lead Frontend Developer</p>
           </div>
         </div>
 
@@ -34,7 +34,7 @@ const TeamMembers = () => {
           </div>
           <div className="team-info">
             <h3 className="team-name">Christian King</h3>
-            <p className="team-role">Lead Backend Developer</p>
+            <p className="team-role">Admin / Lead Backend Developer</p>
           </div>
         </div>
 
@@ -44,11 +44,11 @@ const TeamMembers = () => {
           </div>
           <div className="team-info">
             <h3 className="team-name">Elijah Elijah</h3>
-            <p className="team-role">Lead Graphics Design</p>
+            <p className="team-role">Admin / Lead Graphics Design</p>
           </div>
         </div>
 
-        <div className="team-card">
+        {/* <div className="team-card">
           <div className="team-image">
             <img src="/images/member5.jpg" alt="Team Member" />
           </div>
@@ -56,7 +56,7 @@ const TeamMembers = () => {
             <h3 className="team-name">Mmakan Wills</h3>
             <p className="team-role">Marketing & Strategy</p>
           </div>
-        </div>
+        </div> */}
 
       </div>
     </section>

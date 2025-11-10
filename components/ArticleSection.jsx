@@ -1,6 +1,10 @@
 'use client';
 import React, { useState } from 'react';
 import { ExternalLink, ArrowRight, ArrowLeft } from 'lucide-react';
+import "./ArticleCard.css";
+import "./ArticleFullView.css";
+import "./ArticlePage.css";
+
 
 // Article Data Component
 const ArticleData = {
@@ -79,7 +83,7 @@ const ArticleData = {
           {
             type: 'text',
             heading: 'The Problem with Full Hydration',
-            text: 'When a large page with many interactive components is hydrated all at once, performance suffers. The browser is forced to process a heavy JavaScript bundle, increasing loading time and slowing down the “time to interactive.” This can be particularly noticeable on mobile devices or slower connections. Users may experience delays before they can interact with the page, leading to frustration and higher bounce rates. In essence, full hydration can lead to unnecessary work — activating scripts for sections that users may never even scroll to. This inefficiency is what Progressive Hydration and Islands Architecture are designed to solve.'
+            text: 'When a large page with many interactive components is hydrated all at once, performance suffers. The browser is forced to process a heavy JavaScript bundle, increasing loading time and slowing down the "time to interactive." This can be particularly noticeable on mobile devices or slower connections. Users may experience delays before they can interact with the page, leading to frustration and higher bounce rates. In essence, full hydration can lead to unnecessary work — activating scripts for sections that users may never even scroll to. This inefficiency is what Progressive Hydration and Islands Architecture are designed to solve.'
           },
           {
             type: 'text',
@@ -89,7 +93,7 @@ const ArticleData = {
           {
             type: 'text',
             heading: 'What Is Islands Architecture?',
-            text: 'Islands Architecture takes the concept even further by focusing on structure rather than timing. Instead of treating an entire webpage as one big application, the page is divided into smaller, isolated “islands” of interactivity surrounded by static, fast-loading HTML. Each island functions independently. For instance, a product carousel, a search bar, and a newsletter form might all exist as separate islands. Only those specific parts need JavaScript, and only when they become visible or are interacted with. This means the browser handles far less code at once, drastically improving performance. It also allows developers to mix different frameworks or tools within a single site, making the architecture both flexible and efficient.'
+            text: 'Islands Architecture takes the concept even further by focusing on structure rather than timing. Instead of treating an entire webpage as one big application, the page is divided into smaller, isolated "islands" of interactivity surrounded by static, fast-loading HTML. Each island functions independently. For instance, a product carousel, a search bar, and a newsletter form might all exist as separate islands. Only those specific parts need JavaScript, and only when they become visible or are interacted with. This means the browser handles far less code at once, drastically improving performance. It also allows developers to mix different frameworks or tools within a single site, making the architecture both flexible and efficient.'
           },
 
 
@@ -208,147 +212,40 @@ const FormInput = ({ name, validate }) => {
 
 // Article Card Component
 const ArticleCard = ({ article, isWebArticle, onReadMore }) => {
-  const styles = {
-    card: {
-      background: '#111',
-      border: '1px solid #222',
-      borderRadius: '8px',
-      overflow: 'hidden',
-      transition: 'all 0.3s ease',
-      cursor: 'pointer',
-      height: '100%',
-      display: 'flex',
-      flexDirection: 'column'
-    },
-    imageContainer: {
-      width: '100%',
-      height: '200px',
-      overflow: 'hidden',
-      position: 'relative'
-    },
-    image: {
-      width: '100%',
-      height: '100%',
-      objectFit: 'cover',
-      transition: 'transform 0.3s ease'
-    },
-    content: {
-      padding: '24px',
-      flex: 1,
-      display: 'flex',
-      flexDirection: 'column'
-    },
-    platformBadge: {
-      display: 'inline-flex',
-      alignItems: 'center',
-      gap: '6px',
-      color: '#3b82f6',
-      fontSize: '14px',
-      marginBottom: '12px'
-    },
-    title: {
-      fontSize: '20px',
-      fontWeight: '600',
-      color: '#fff',
-      marginBottom: '12px',
-      lineHeight: '1.4'
-    },
-    description: {
-      color: '#999',
-      fontSize: '14px',
-      marginBottom: '16px',
-      lineHeight: '1.6',
-      flex: 1
-    },
-    authorSection: {
-      display: 'flex',
-      alignItems: 'center',
-      gap: '12px',
-      marginBottom: '20px',
-      paddingBottom: '16px',
-      borderBottom: '1px solid #222'
-    },
-    avatar: {
-      width: '40px',
-      height: '40px',
-      borderRadius: '50%',
-      objectFit: 'cover'
-    },
-    authorInfo: {
-      flex: 1
-    },
-    authorName: {
-      color: '#fff',
-      fontSize: '14px',
-      fontWeight: '500',
-      marginBottom: '4px'
-    },
-    meta: {
-      display: 'flex',
-      alignItems: 'center',
-      gap: '8px',
-      fontSize: '12px',
-      color: '#666'
-    },
-    readMoreBtn: {
-      display: 'inline-flex',
-      alignItems: 'center',
-      gap: '8px',
-      background: '#dc2626',
-      color: '#fff',
-      padding: '10px 24px',
-      border: 'none',
-      borderRadius: '4px',
-      cursor: 'pointer',
-      fontSize: '14px',
-      fontWeight: '500',
-      transition: 'background 0.3s ease',
-      textDecoration: 'none',
-      alignSelf: 'flex-start'
-    }
-  };
-
   const [isHovered, setIsHovered] = useState(false);
 
   return (
-    <div 
-      style={{
-        ...styles.card,
-        transform: isHovered ? 'translateY(-5px)' : 'translateY(0)',
-        borderColor: isHovered ? '#444' : '#222'
-      }}
+    <div  
+      className="article-card"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
-      <div style={styles.imageContainer}>
+      <div className="article-card-image-container">
         <img 
           src={article.image} 
           alt={article.title}
-          style={{
-            ...styles.image,
-            transform: isHovered ? 'scale(1.05)' : 'scale(1)'
-          }}
+          className="article-card-image"
         />
       </div>
-      <div style={styles.content}>
+      <div className="article-card-content">
         {isWebArticle && (
-          <div style={styles.platformBadge}>
+          <div className="article-card-platform-badge">
             <ExternalLink size={16} />
             <span>{article.platform}</span>
           </div>
         )}
-        <h3 style={styles.title}>{article.title}</h3>
-        <p style={styles.description}>{article.description}</p>
+        <h3 className="article-card-title">{article.title}</h3>
+        <p className="article-card-description">{article.description}</p>
         
-        <div style={styles.authorSection}>
+        <div className="article-card-author-section">
           <img 
             src={article.author.avatar} 
             alt={article.author.name}
-            style={styles.avatar}
+            className="article-card-avatar"
           />
-          <div style={styles.authorInfo}>
-            <div style={styles.authorName}>{article.author.name}</div>
-            <div style={styles.meta}>
+          <div className="article-card-author-info">
+            <div className="article-card-author-name">{article.author.name}</div>
+            <div className="article-card-meta">
               <span>{article.date}</span>
               <span>•</span>
               <span>{article.readTime}</span>
@@ -361,20 +258,14 @@ const ArticleCard = ({ article, isWebArticle, onReadMore }) => {
             href={article.externalUrl}
             target="_blank"
             rel="noopener noreferrer"
-            style={{
-              ...styles.readMoreBtn,
-              background: isHovered ? '#b91c1c' : '#dc2626'
-            }}
+            className="article-card-read-more-btn"
           >
             Read More <ArrowRight size={16} />
           </a>
         ) : (
           <button 
             onClick={() => onReadMore(article)}
-            style={{
-              ...styles.readMoreBtn,
-              background: isHovered ? '#b91c1c' : '#dc2626'
-            }}
+            className="article-card-read-more-btn"
           >
             Read More <ArrowRight size={16} />
           </button>
@@ -393,176 +284,30 @@ const ArticleFullView = ({ article, onClose }) => {
     setCopiedIndex(index);
     setTimeout(() => setCopiedIndex(null), 2000);
   };
-  const styles = {
-    overlay: {
-      position: 'fixed',
-      top: 0,
-      left: 0,
-      width: '100%',
-      height: '100%',
-      background: '#000',
-      overflowY: 'auto',
-      zIndex: 1000
-    },
-    container: {
-      maxWidth: '900px',
-      margin: '0 auto',
-      padding: '40px 20px'
-    },
-    backBtn: {
-      display: 'inline-flex',
-      alignItems: 'center',
-      gap: '8px',
-      background: 'transparent',
-      color: '#999',
-      border: 'none',
-      cursor: 'pointer',
-      fontSize: '16px',
-      marginBottom: '30px',
-      transition: 'color 0.3s ease',
-      padding: '8px 0'
-    },
-    title: {
-      fontSize: '48px',
-      fontWeight: '700',
-      marginBottom: '20px',
-      lineHeight: '1.2',
-      color: '#fff'
-    },
-    authorSection: {
-      display: 'flex',
-      alignItems: 'center',
-      gap: '16px',
-      marginBottom: '40px',
-      paddingBottom: '30px',
-      borderBottom: '1px solid #222'
-    },
-    avatar: {
-      width: '60px',
-      height: '60px',
-      borderRadius: '50%'
-    },
-    authorInfo: {
-      flex: 1
-    },
-    authorName: {
-      color: '#fff',
-      fontSize: '18px',
-      fontWeight: '600',
-      marginBottom: '6px'
-    },
-    meta: {
-      display: 'flex',
-      alignItems: 'center',
-      gap: '12px',
-      color: '#999',
-      fontSize: '14px'
-    },
-    image: {
-      width: '100%',
-      height: '400px',
-      objectFit: 'cover',
-      borderRadius: '8px',
-      marginBottom: '50px'
-    },
-    section: {
-      marginBottom: '40px'
-    },
-    sectionHeading: {
-      fontSize: '28px',
-      fontWeight: '600',
-      color: '#fff',
-      marginBottom: '16px',
-      lineHeight: '1.3'
-    },
-    sectionText: {
-      color: '#ccc',
-      fontSize: '18px',
-      lineHeight: '1.8'
-    },
-    codeBlock: {
-      background: '#0d1117',
-      border: '1px solid #30363d',
-      borderRadius: '6px',
-      padding: '20px',
-      marginTop: '16px',
-      overflow: 'auto'
-    },
-    codeHeader: {
-      display: 'flex',
-      justifyContent: 'space-between',
-      alignItems: 'center',
-      marginBottom: '12px',
-      paddingBottom: '12px',
-      borderBottom: '1px solid #30363d'
-    },
-    languageTag: {
-      color: '#58a6ff',
-      fontSize: '14px',
-      fontWeight: '500'
-    },
-    copyBtn: {
-      background: '#21262d',
-      border: '1px solid #30363d',
-      color: '#c9d1d9',
-      padding: '6px 12px',
-      borderRadius: '4px',
-      fontSize: '12px',
-      cursor: 'pointer',
-      transition: 'all 0.2s ease'
-    },
-    code: {
-      fontFamily: 'Consolas, Monaco, "Courier New", monospace',
-      fontSize: '14px',
-      lineHeight: '1.6',
-      color: '#c9d1d9',
-      whiteSpace: 'pre',
-      overflowX: 'auto'
-    },
-    codeExplanation: {
-      color: '#8b949e',
-      fontSize: '16px',
-      marginTop: '12px',
-      fontStyle: 'italic',
-      lineHeight: '1.6'
-    },
-    footer: {
-      marginTop: '60px',
-      paddingTop: '30px',
-      borderTop: '1px solid #222'
-    },
-  };
-
-  const [isBackHovered, setIsBackHovered] = useState(false);
 
   return (
-    <div style={styles.overlay}>
-      <div style={styles.container}>
+    <div className="article-fullview-overlay">
+      <div className="article-fullview-container">
         <button 
           onClick={onClose}
-          style={{
-            ...styles.backBtn,
-            color: isBackHovered ? '#fff' : '#999'
-          }}
-          onMouseEnter={() => setIsBackHovered(true)}
-          onMouseLeave={() => setIsBackHovered(false)}
+          className="article-fullview-back-btn"
         >
           <ArrowLeft size={20} />
           Back to Articles
         </button>
 
         <article>
-          <h1 style={styles.title}>{article.title}</h1>
+          <h1 className="article-fullview-title">{article.title}</h1>
           
-          <div style={styles.authorSection}>
+          <div className="article-fullview-author-section">
             <img 
               src={article.author.avatar} 
               alt={article.author.name}
-              style={styles.avatar}
+              className="article-fullview-avatar"
             />
-            <div style={styles.authorInfo}>
-              <div style={styles.authorName}>{article.author.name}</div>
-              <div style={styles.meta}>
+            <div className="article-fullview-author-info">
+              <div className="article-fullview-author-name">{article.author.name}</div>
+              <div className="article-fullview-meta">
                 <span>{article.date}</span>
                 <span>•</span>
                 <span>{article.readTime}</span>
@@ -573,49 +318,41 @@ const ArticleFullView = ({ article, onClose }) => {
           <img 
             src={article.image} 
             alt={article.title}
-            style={styles.image}
+            className="article-fullview-image"
           />
 
           {article.content.sections.map((section, index) => (
-            <div key={index} style={styles.section}>
-              <h2 style={styles.sectionHeading}>{section.heading}</h2>
+            <div key={index} className="article-fullview-section">
+              <h2 className="article-fullview-section-heading">{section.heading}</h2>
               
               {section.type === 'text' ? (
-                <p style={styles.sectionText}>{section.text}</p>
+                <p className="article-fullview-section-text">{section.text}</p>
               ) : section.type === 'code' ? (
                 <>
-                  <div style={styles.codeBlock}>
-                    <div style={styles.codeHeader}>
-                      <span style={styles.languageTag}>{section.language}</span>
+                  <div className="article-fullview-code-block">
+                    <div className="article-fullview-code-header">
+                      <span className="article-fullview-language-tag">{section.language}</span>
                       <button 
                         onClick={() => copyCode(section.code, index)}
-                        style={{
-                          ...styles.copyBtn,
-                          background: copiedIndex === index ? '#238636' : '#21262d'
-                        }}
+                        className={`article-fullview-copy-btn ${copiedIndex === index ? 'copied' : ''}`}
                       >
                         {copiedIndex === index ? 'Copied!' : 'Copy Code'}
                       </button>
                     </div>
-                    <pre style={styles.code}>{section.code}</pre>
+                    <pre className="article-fullview-code">{section.code}</pre>
                   </div>
                   {section.explanation && (
-                    <p style={styles.codeExplanation}>{section.explanation}</p>
+                    <p className="article-fullview-code-explanation">{section.explanation}</p>
                   )}
                 </>
               ) : null}
             </div>
           ))}
 
-          <div style={styles.footer}>
+          <div className="article-fullview-footer">
             <button 
               onClick={onClose}
-              style={{
-                ...styles.backBtn,
-                color: isBackHovered ? '#fff' : '#999'
-              }}
-              onMouseEnter={() => setIsBackHovered(true)}
-              onMouseLeave={() => setIsBackHovered(false)}
+              className="article-fullview-back-btn"
             >
               <ArrowLeft size={20} />
               Back to Articles
@@ -631,85 +368,13 @@ const ArticleFullView = ({ article, onClose }) => {
 const ArticlesPage = () => {
   const [selectedArticle, setSelectedArticle] = useState(null);
 
-  const styles = {
-    page: {
-      minHeight: '100vh',
-      background: '#000',
-      color: '#fff',
-      marginTop: '50px',
-    },
-    header: {
-      background: '#000',
-      padding: '20px 0',
-      borderBottom: '1px solid #222',
-      position: 'sticky',
-      top: 0,
-      zIndex: 100
-    },
-    nav: {
-      maxWidth: '1200px',
-      margin: '0 auto',
-      padding: '0 20px',
-      display: 'flex',
-      justifyContent: 'space-between',
-      alignItems: 'center'
-    },
-    logo: {
-      fontSize: '24px',
-      fontWeight: 'bold'
-    },
-    navLinks: {
-      display: 'flex',
-      gap: '30px',
-      alignItems: 'center'
-    },
-    link: {
-      color: '#fff',
-      textDecoration: 'none',
-      transition: 'color 0.3s ease'
-    },
-    contactBtn: {
-      background: '#dc2626',
-      padding: '10px 24px',
-      borderRadius: '4px',
-      border: 'none',
-      color: '#fff',
-      cursor: 'pointer',
-      transition: 'background 0.3s ease'
-    },
-    container: {
-      maxWidth: '1200px',
-      margin: '0 auto',
-      padding: '60px 20px'
-    },
-    section: {
-      marginBottom: '80px'
-    },
-    sectionTitle: {
-      fontSize: '32px',
-      fontWeight: '700',
-      marginBottom: '40px',
-      paddingBottom: '15px',
-      borderBottom: '2px solid #dc2626',
-      display: 'inline-block'
-    },
-    grid: {
-      display: 'grid',
-      gridTemplateColumns: 'repeat(auto-fill, minmax(350px, 1fr))',
-      gap: '30px',
-      marginTop: '30px'
-    }
-  };
-
   return (
-    <div style={styles.page}>
-      
-
+    <div className="articles-page">
       {!selectedArticle ? (
-        <div style={styles.container}>
-          <div style={styles.section}>
-            <h2 style={styles.sectionTitle}>Web Articles</h2>
-            <div style={styles.grid}>
+        <div className="articles-page-container">
+          <div className="articles-page-section">
+            <h2 className="articles-page-section-title">Web Articles</h2>
+            <div className="articles-page-grid">
               {ArticleData.webArticles.map(article => (
                 <ArticleCard 
                   key={article.id}
@@ -720,9 +385,9 @@ const ArticlesPage = () => {
             </div>
           </div>
 
-          <div style={styles.section}>
-            <h2 style={styles.sectionTitle}>On-Site Articles</h2>
-            <div style={styles.grid}>
+          <div className="articles-page-section">
+            <h2 className="articles-page-section-title">On-Site Articles</h2>
+            <div className="articles-page-grid">
               {ArticleData.onsiteArticles.map(article => (
                 <ArticleCard 
                   key={article.id}

@@ -1,3 +1,4 @@
+/* Articles Page Styles */
 .articles-page {
   min-height: 100vh;
   background: #000;
@@ -5,17 +6,70 @@
   margin-top: 50px;
 }
 
-.articles-container {
+.articles-page-header {
+  background: #000;
+  padding: 20px 0;
+  border-bottom: 1px solid #222;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.articles-page-nav {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.articles-page-logo {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.articles-page-nav-links {
+  display: flex;
+  gap: 30px;
+  align-items: center;
+}
+
+.articles-page-link {
+  color: #fff;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.articles-page-link:hover {
+  color: #dc2626;
+}
+
+.articles-page-contact-btn {
+  background: #dc2626;
+  padding: 10px 24px;
+  border-radius: 4px;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.articles-page-contact-btn:hover {
+  background: #b91c1c;
+}
+
+.articles-page-container {
   max-width: 1200px;
   margin: 0 auto;
   padding: 60px 20px;
 }
 
-.article-section {
+.articles-page-section {
   margin-bottom: 80px;
 }
 
-.section-title {
+.articles-page-section-title {
   font-size: 32px;
   font-weight: 700;
   margin-bottom: 40px;
@@ -24,19 +78,29 @@
   display: inline-block;
 }
 
-.articles-grid {
+.articles-page-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
   gap: 30px;
   margin-top: 30px;
 }
 
+/* Responsive Design */
 @media (max-width: 768px) {
-  .articles-grid {
+  .articles-page-grid {
     grid-template-columns: 1fr;
   }
-
-  .section-title {
-    font-size: 26px;
+  
+  .articles-page-section-title {
+    font-size: 28px;
+  }
+  
+  .articles-page-nav-links {
+    gap: 15px;
+  }
+  
+  .articles-page-nav {
+    flex-direction: column;
+    gap: 15px;
   }
 }
