@@ -15,7 +15,7 @@ const Navbar = () => {
         <Link href="/">
           <div className="logo">
             <div className="logoimage">
-              <img src="/svg/crea8logo.png" alt="Logo" />
+              <img src="/svg/crea8logorebrand.png" alt="Logo" />
             </div>
           </div>
         </Link>

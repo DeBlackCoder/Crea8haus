@@ -36,16 +36,16 @@ header a {
 
 .logoimage img {
   object-fit: contain;
-  filter: drop-shadow(0 0 4px #00aaff4d);
+  /* filter: drop-shadow(0 0 4px #00aaff4d); */
   border-radius: 5%;
   width: 175px;
   height: 55px;
   transition: all 0.4s;
 }
 
-.logoimage img:hover {
+/* .logoimage img:hover {
   filter: drop-shadow(0 0 8px rgba(0, 170, 255, 0.6));
-}
+} */
 
 .logo strong {
   font-size: 1.4rem;
